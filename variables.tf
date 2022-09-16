@@ -8,7 +8,7 @@ variable "subscription_id"{
 }
 variable "client_id"{
     type = string
-    default = "58f55903-6333-4af7-81b4-7b8df72f3fde"
+    default = "6e81c201-2fa3-4da0-8d4b-7d3fab750378"
 }
 variable "tenant_id"{
     type = string
