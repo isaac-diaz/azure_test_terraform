@@ -26,7 +26,7 @@ resource "azurerm_kubernetes_cluster" "gtest_k8s_cluster" {
   name                = "gtest_k8s_cluster"
   location            = azurerm_resource_group.gtest.location
   resource_group_name = azurerm_resource_group.gtest.name
-  dns_prefix          = "gtest_aks1"
+  dns_prefix          = "gtestaks"
 
   default_node_pool {
     name       = "default"
