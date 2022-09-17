@@ -39,7 +39,7 @@ resource "azurerm_kubernetes_cluster" "gtest_k8s_cluster" {
   }
 
   tags = {
-    Environment = "Production"
+    Environment = "Dev"
   }
 }
 
@@ -52,4 +52,15 @@ output "kube_config" {
   value = azurerm_kubernetes_cluster.gtest_k8s_cluster.kube_config_raw
 
   sensitive = true
+}
+
+resource "azurerm_kubernetes_cluster_node_pool" "gtest_k8s_cluster_pool" {
+  name                  = "internal"
+  kubernetes_cluster_id = azurerm_kubernetes_cluster.gtest_k8s_cluster.id
+  vm_size               = "Standard_DS2_v2"
+  node_count            = 1
+
+  tags = {
+    Environment = "Dev"
+  }
 }
